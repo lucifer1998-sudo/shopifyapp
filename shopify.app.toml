@@ -3,7 +3,7 @@
 client_id = "3ebdac5734b727f50db4981984361225"
 name = "LiveWellRx"
 handle = "livewellrx"
-application_url = "https://restored-links-voip-centuries.trycloudflare.com"
+application_url = "https://registration-laugh-leg-katie.trycloudflare.com"
 embedded = true
 
 [build]
@@ -26,7 +26,7 @@ api_version = "2025-07"
 scopes = "write_products,read_orders,write_orders,read_metaobjects,write_metaobjects"
 
 [auth]
-redirect_urls = ["https://restored-links-voip-centuries.trycloudflare.com/auth/callback", "https://restored-links-voip-centuries.trycloudflare.com/auth/shopify/callback", "https://restored-links-voip-centuries.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://registration-laugh-leg-katie.trycloudflare.com/auth/callback", "https://registration-laugh-leg-katie.trycloudflare.com/auth/shopify/callback", "https://registration-laugh-leg-katie.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false

@@ -6,8 +6,8 @@
 api_version = "2025-07"
 
 [[extensions]]
-name = "CheckoutUI"
-handle = "checkoutui"
+name = "PrescriberyCheckoutUi"
+handle = "prescriberycheckoutui"
 type = "ui_extension"
 
 
