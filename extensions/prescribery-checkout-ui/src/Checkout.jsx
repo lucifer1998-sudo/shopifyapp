@@ -21,14 +21,15 @@ function Extension() {
   );
 
   console.log(hasPrescribery,'hasprescribery');
-  const orderId = orderConfirmation.current.order.id; //gid://shopify/OrderIdentity/6747217789089
+  const orderGid = orderConfirmation.current.order.id; //gid://shopify/OrderIdentity/6747217789089
+  const orderId = orderGid.split("/").pop(); // "6747217789089"
 
   return (
     hasPrescribery ? (
       <Banner title="Thank you for your order!">
         <Text size="medium">
           Please{" "}
-          <Link to={`https://www.service.prescribery.com?id=${btoa(orderId)}`}>
+          <Link to={`https://www.service.prescribery.com?id=${orderId}`}>
             click here
           </Link>{" "}
           to submit the questionnaire
