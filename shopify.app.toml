@@ -3,7 +3,7 @@
 client_id = "3ebdac5734b727f50db4981984361225"
 name = "LiveWellRx"
 handle = "livewellrx"
-application_url = "https://registration-laugh-leg-katie.trycloudflare.com"
+application_url = "https://contemporary-settlement-photos-recognize.trycloudflare.com"
 embedded = true
 
 [build]
@@ -26,7 +26,7 @@ api_version = "2025-07"
 scopes = "write_products,read_orders,write_orders,read_metaobjects,write_metaobjects,read_customers"
 
 [auth]
-redirect_urls = ["https://registration-laugh-leg-katie.trycloudflare.com/auth/callback", "https://registration-laugh-leg-katie.trycloudflare.com/auth/shopify/callback", "https://registration-laugh-leg-katie.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://contemporary-settlement-photos-recognize.trycloudflare.com/auth/callback", "https://contemporary-settlement-photos-recognize.trycloudflare.com/auth/shopify/callback", "https://contemporary-settlement-photos-recognize.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false

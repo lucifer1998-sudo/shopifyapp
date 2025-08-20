@@ -10,6 +10,7 @@ import {
 } from "@shopify/polaris";
 
 function sendQuestionnaireEmail(orderId){
+  console.log(btoa(orderId.toString()),"ORDER ID")
   const link = `https://webhook.site/2f314413-d0bd-42dd-af07-07ebfb32c633`;
   fetch(link, { method: "GET" });
 }
@@ -30,7 +31,7 @@ export async function loader({ request }) {
                   product {
                     id
                     title
-                    metafield(namespace: "custom", key: "isprescribery") { value }
+                    metafield(namespace: "custom", key: "requires_questionnaire") { value }
                   }
                 }
               }
@@ -49,7 +50,6 @@ export async function loader({ request }) {
 
 export default function QuestionnaireIndex() {
   const { edges } = useLoaderData();
-
   const filteredEdges = edges.filter(({ node }) =>
     node.lineItems?.edges?.some(e => e.node.product?.metafield?.value === "true")
   );

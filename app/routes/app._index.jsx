@@ -88,6 +88,7 @@ export const action = async ({ request }) => {
 
 export default function Index() {
   const fetcher = useFetcher();
+  const installFetcher = useFetcher();
   const shopify = useAppBridge();
   const isLoading =
     ["loading", "submitting"].includes(fetcher.state) &&
@@ -97,11 +98,25 @@ export default function Index() {
     "",
   );
 
+  // Trigger metafield definition creation only once on app load
+  useEffect(() => {
+      installFetcher.submit({}, { method: "POST", action: "/app/install" });
+      sessionStorage.setItem('metafieldInstallAttempted', 'true');
+  }, []);
+
   useEffect(() => {
     if (productId) {
       shopify.toast.show("Product created");
     }
   }, [productId, shopify]);
+
+  useEffect(() => {
+    if (installFetcher.data?.success) {
+      shopify.toast.show(installFetcher.data?.success);
+    } else if (installFetcher.data?.error) {
+      shopify.toast.show("Failed to create metafield definition: " + installFetcher.data.error);
+    }
+  }, [installFetcher.data, shopify]);
   const generateProduct = () => fetcher.submit({}, { method: "POST" });
 
   return (
